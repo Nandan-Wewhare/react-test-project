@@ -23,7 +23,7 @@ function BookList() {
   return (
     <section className="bookList">
       {books.map((book) => {
-        return <Book book={book}></Book>; 
+        return <Book key={book.id}  book={book}></Book>; 
         // instead of passing object we can also pass {...book} which passes all the properties to the function
         // overall it will become <Book {...book}/>
       })}
@@ -32,11 +32,14 @@ function BookList() {
 }
 
 const Book = (props) => {
-  console.log(props);
+  const handleClick = () =>{
+    alert('You clicked something')
+  }
+
   return (
     <article className="book">
       <img src={props.book.img} alt=""></img>
-      <h1>{props.book.title}</h1>
+      <h1 onClick={handleClick}>{props.book.title}</h1>
       <h4>{props.book.author}</h4>
     </article>
   );
