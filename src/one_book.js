@@ -14,4 +14,6 @@ const Book = (props) => {
   );
 };
 
-export default Book;
+export default Book; 
+// diff bw export default and normal export is that we can name it anything in the file 
+// where it is imported if we use export default and vice-versa.
